@@ -24,4 +24,10 @@ public class StringCalculatorTest {
 	public void TestMultipleNumbers() {
 		assertEquals(798, StringCalculator.Add("13,12,53,566,43,21,3,87"));
 	}
+
+	@Test
+	public void TestNewlines() {
+		assertEquals(6, StringCalculator.Add("1\n2,3"));
+	}
+}
 }
