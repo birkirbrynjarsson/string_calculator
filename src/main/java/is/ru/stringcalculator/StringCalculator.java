@@ -8,7 +8,7 @@ public class StringCalculator {
 		int sum = 0;
 		if(!text.isEmpty()){
 			if(text.startsWith("//")){
-				delim += text.substring(2,3);
+				delim += "|" + text.substring(2,3);
 				text = text.substring(4,text.length());
 			}
 			String[] numbers = text.split(delim);
