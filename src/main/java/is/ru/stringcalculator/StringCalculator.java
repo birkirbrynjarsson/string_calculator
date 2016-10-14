@@ -2,19 +2,21 @@ package is.ru.stringcalculator;
 
 public class StringCalculator {
 
+	private static String delim = ",|\n";
+
 	public static int add(String text) throws Exception {
-		if(text == "")
-			return 0;
-		String[] numbers = text.split(",|\n");
 		int sum = 0;
-		for(String n : numbers){
-			int num = Integer.parseInt(n);
-			if(num < 0){
-				String negatives = handleNegatives(numbers);
-				throw new Exception("Negatives not allowed: " + negatives);
+		if(!text.isEmpty()){
+			String[] numbers = text.split(delim);
+			for(String n : numbers){
+				int num = Integer.parseInt(n);
+				if(num < 0){
+					String negatives = handleNegatives(numbers);
+					throw new Exception("Negatives not allowed: " + negatives);
+				}
+				if (num < 1000)
+					sum += num;
 			}
-			if (num < 1000)
-				sum += num;
 		}
 		return sum;
 	}
