@@ -40,4 +40,9 @@ public class StringCalculatorTest {
 			assertEquals(expectedMessage, e.getMessage());
 		}
 	}
+
+	@Test
+	public void TestIgnoreOverThousand() throws Exception {
+		assertEquals(3, StringCalculator.add("1001,3"));
+	}
 }

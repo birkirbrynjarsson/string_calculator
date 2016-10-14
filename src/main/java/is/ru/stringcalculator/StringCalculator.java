@@ -13,7 +13,8 @@ public class StringCalculator {
 				String negatives = handleNegatives(numbers);
 				throw new Exception("Negatives not allowed: " + negatives);
 			}
-			sum += num;
+			if (num < 1000)
+				sum += num;
 		}
 		return sum;
 	}
