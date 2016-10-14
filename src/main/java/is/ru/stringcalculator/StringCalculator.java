@@ -7,6 +7,10 @@ public class StringCalculator {
 	public static int add(String text) throws Exception {
 		int sum = 0;
 		if(!text.isEmpty()){
+			if(text.startsWith("//")){
+				delim += text.substring(2,3);
+				text = text.substring(4,text.length());
+			}
 			String[] numbers = text.split(delim);
 			for(String n : numbers){
 				int num = Integer.parseInt(n);

@@ -45,4 +45,9 @@ public class StringCalculatorTest {
 	public void TestIgnoreOverThousand() throws Exception {
 		assertEquals(3, StringCalculator.add("1001,3"));
 	}
+
+	@Test
+	public void TestNewDelimeter() throws Exception {
+		assertEquals(3, StringCalculator.add("//;\n1;2"));
+	}
 }
