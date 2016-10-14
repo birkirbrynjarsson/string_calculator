@@ -19,4 +19,9 @@ public class StringCalculatorTest {
 	public void testTwoNumbers() {
 		assertEquals(3, StringCalculator.add("1,2"));
 	}
+
+	@Test
+	public void TestMultipleNumbers() {
+		assertEquals(798, StringCalculator.Add("13,12,53,566,43,21,3,87"));
+	}
 }
